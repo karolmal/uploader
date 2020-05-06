@@ -11,8 +11,8 @@
 @section('form')
 
     <!-- form to upload video -->
-    <div class="containter">
-        <form action="{{route('store')}}" method="POST"  enctype="multipart/form-data" class="dropzone" id="media-dropzone">
+    <div class="container">
+        <form action="{{route('store')}}" method="POST"  enctype="multipart/form-data">
         @csrf 
 
     <label for="username">Username</label>
@@ -28,14 +28,22 @@
     @endif
 
     <hr/>
+    {{-- <div class="dz-default dz-message"><button class="dz-button" type="button">Drop files here to upload</button></div> --}}
+
+            <div class="my-dropzone"></div>
+
 
     <button type="submit">
         Save Post
     </button>
 
     </form>
+    {{-- <input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;"> --}}
 
 </div>
 
 
+
+
 @endsection
+
