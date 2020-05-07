@@ -12,7 +12,7 @@
 
     <!-- form to upload video -->
     <div class="container">
-        <form action="{{route('store')}}" method="POST"  enctype="multipart/form-data">
+        <form action="{{route('store')}}" method="POST"  enctype="multipart/form-data" id="form-id">
         @csrf 
 
     <label for="username">Username</label>
@@ -30,7 +30,7 @@
     <hr/>
     {{-- <div class="dz-default dz-message"><button class="dz-button" type="button">Drop files here to upload</button></div> --}}
 
-            <div class="my-dropzone"></div>
+            <div class="dropzone my-dropzone"></div>
 
 
     <button type="submit">
