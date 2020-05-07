@@ -14,6 +14,8 @@ class File extends Model implements HasMedia
     protected $fillable = ['username'];
     protected $with = ['media'];
 
-
+    public function user(){
+        return $this->belongsTo('App/User');
+    }
     
 }

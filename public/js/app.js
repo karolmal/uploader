@@ -4,7 +4,7 @@
 console.log('here we are');
 $(document).ready(function () {
 $(".my-dropzone").dropzone({
-        url: '/test/1',
+        url: '/file',
         autoProcessQueue: false,
         init: function(){
             console.log('Dropzone Initialized...');
