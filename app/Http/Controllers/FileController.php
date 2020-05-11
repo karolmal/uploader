@@ -50,7 +50,7 @@ $file = new File();
 
         
 
-        return redirect()->route('index')->with('success', 'Post created successfully.');
+        return $file->id; //redirect()->route('index')->with('success', 'Post created successfully.');
     }
 }
 

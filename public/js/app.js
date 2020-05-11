@@ -9,13 +9,23 @@ $(".my-dropzone").dropzone({
         autoProcessQueue: true,
         init: function(){
             console.log('Dropzone Initialized...');
-        this.on("complete", function (file) {
+        // this.on("complete", function (file, response) {
+        //     //on complete if file variable is an int save into a hidden field on the form. 
+        //     //on submit of form, send file_id. Your usercontroller can then associate that id with the new user you're creating
+        //     console.log('Dropzone Initialized... success',response,  file);
+        //     if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+        //         document.getElementById('submitForm').disabled = false;
+        //         document.getElementById('submitForm').textContent = 'Submit';
+        //     }
+        // });
+        this.on("success", function (file, response) {
             //on complete if file variable is an int save into a hidden field on the form. 
             //on submit of form, send file_id. Your usercontroller can then associate that id with the new user you're creating
-            console.log('Dropzone Initialized... success');
+            console.log('Dropzone Initialized... success',response,  file);
             if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
                 document.getElementById('submitForm').disabled = false;
                 document.getElementById('submitForm').textContent = 'Submit';
+                $('#file_id').val(response);
             }
         });
         this.on("addedfile", function (file) {

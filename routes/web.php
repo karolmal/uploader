@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/file', 'FileController@index' )->name('index');
 Route::get('/file/create', 'FileController@create' )->name('create');
-Route::post('/file', 'FileController@store' )->name('store');
+Route::post('/file', 'FileController@store' )->name('filestore');
+Route::post('/user', 'UserNameController@store' )->name('userstore');
 Route::get('/file/{file}', 'FileController@show' )->name('show');
 Route::get('/file/{file}/edit', 'FileController@edit' )->name('edit');
 Route::patch('/file/{file}', 'FileController@update' )->name('update');

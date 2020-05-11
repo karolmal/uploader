@@ -12,9 +12,9 @@
 
     <!-- form to upload video -->
     <div class="container">
-        <form action="{{route('store')}}" method="POST"  enctype="multipart/form-data">
+        <form action="{{route('userstore')}}" method="POST">
         @csrf 
-
+<input type="hidden" id="file_id" name="file_id" value="">
     <label for="username">Username</label>
     <input type="text" name="username" placeholder="Post username">
     @if ($errors->any())

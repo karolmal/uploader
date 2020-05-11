@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    public function files(){
-        return $this->hasMany(File::class);
+
+    protected $fillable = ['username'];
+
+    public function file(){
+        return $this->belongsTo(File::class);
     }
 }
