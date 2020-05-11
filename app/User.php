@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     public function files(){
-        return $this->hasMany('App/File');
+        return $this->hasMany(File::class);
     }
 }

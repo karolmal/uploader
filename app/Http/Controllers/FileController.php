@@ -23,18 +23,19 @@ class FileController extends Controller
     // Store a file
     public function store(Request $request)
     {
+
  //Validate submitted data
  $request->validate([
     //Post Validation Rules
-    'username' => 'required',
+    // 'username' => 'required',
     //Media Validation Rules
     'file' => 'required|mimes:mp4,x-flv,x-mpegURL,MP2T,3gpp,quicktime,x-msvideo,x-ms-wmv',
    
 ]);
 $file = new File();
         $uploadedFile = $request->file('file', null); // get file from request
-        $data = $request->only('username'); //The request also contains media attachments, so only get the data required for the post
-        $file->fill($data); // fill file model with data from form (username)
+        // $data = $request->only('username'); //The request also contains media attachments, so only get the data required for the post
+        // $file->fill($data); // fill file model with data from form (username)
         $file->addMedia($uploadedFile)->toMediaCollection('files');  //add uploaded file to media collection
         $file->save(); //save file
 

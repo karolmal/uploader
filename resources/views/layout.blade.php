@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="/dropzone/dist/dropzone.css">
     <link rel="stylesheet" href="/dropzone/dist/basic.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
  
