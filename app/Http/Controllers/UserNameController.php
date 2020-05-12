@@ -10,6 +10,19 @@ use function GuzzleHttp\Promise\all;
 
 class UserNameController extends Controller
 {
+
+    // Collect username and send it to index
+    public function index() 
+    {
+        $users = User::all();
+
+        return view('users.index', ['users' => $users]);
+
+
+    }
+
+
+
     // Store username
     public function store(Request $request)
     {
@@ -29,6 +42,9 @@ class UserNameController extends Controller
          $user->fill($data); 
          $user->save();
 
-         return view('index', ['user' => $user]);
+         $user = User::all();
+
+         return view('show', ['user' => $user]);
  }
+
 }

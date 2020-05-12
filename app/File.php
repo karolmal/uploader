@@ -11,7 +11,6 @@ class File extends Model implements HasMedia
 {
     use InteractsWithMedia;
 
-    protected $fillable = ['username'];
     protected $with = ['media'];
 
     public function user(){
