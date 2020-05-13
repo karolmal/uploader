@@ -12,9 +12,20 @@ class File extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $with = ['media'];
+    protected $appends = ['url'];
 
     public function user(){
         return $this->belongsTo(User::class);
+        
+        
     }
+
+
+    public function getUrlAttribute() {
+        $mediaItems =$this->getMedia('files');
+        // dump($mediaItems);
+        return $mediaItems[0]->getFullUrl();
+    }
+
     
 }

@@ -9,9 +9,16 @@ class FileController extends Controller
     //  Take data from database and return in to the view
     public function index() 
     {
-        $files = File::all();
+       $files = File::all();
+        // return $file->first();
 
-        return view('index', ['files' => $files]);
+        // $files = File::with('media')->get();
+
+// return view('/*view name*/')->with('articles', $articles);
+
+        return view('files.index', ['files' => $files]);
+
+        
     }
 
      // Go to new page to create new upload
