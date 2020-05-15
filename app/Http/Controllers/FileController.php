@@ -16,7 +16,7 @@ class FileController extends Controller
 
 // return view('/*view name*/')->with('articles', $articles);
 
-        return view('files.index', ['files' => $files]);
+        return view('index', ['files' => $files]);
 
         
     }

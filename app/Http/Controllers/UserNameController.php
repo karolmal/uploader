@@ -11,11 +11,18 @@ use function GuzzleHttp\Promise\all;
 class UserNameController extends Controller
 {
 
-    // Collect username and send it to index
+    
     public function index() 
     {
         $users = User::all();
-        return view('users.index', ['users' => $users]);
+        $userfile = User::find(9)->file; // select from file where user_id = 9
+        $files = File::all();
+
+        
+
+        
+
+        return view('users.index', ['userfile' => $userfile, 'users' => $users, 'files' => $files],);
 
 
 
