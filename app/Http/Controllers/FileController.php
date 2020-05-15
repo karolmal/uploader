@@ -14,9 +14,10 @@ class FileController extends Controller
 
         // $files = File::with('media')->get();
 
-// return view('/*view name*/')->with('articles', $articles);
+        // return view('/*view name*/')->with('articles', $articles);
 
         return view('index', ['files' => $files]);
+        
 
         
     }

@@ -1,6 +1,11 @@
 @extends('layout')
 
 
+    <!-- go to create page -->
+    <div class="container">
+      <a href="/create">Create new upload</a>
+  </div>
+
 @foreach($users as $user) 
 
 <div class="container">

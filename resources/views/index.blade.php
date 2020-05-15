@@ -2,9 +2,9 @@
 @extends('layout')
 
 @section('content')
-    <!-- go to create page -->
+    <!-- go to index page -->
     <div class="container">
-        <a href="/file/create">Create</a>
+        <a href="/file">See all uploads</a>
     </div>
 
 @endsection

@@ -11,18 +11,13 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 */
-
-Route::get('/files', 'FileController@index' )->name('index');
-Route::get('/users', 'UserNameController@index' )->name('userindex');
-
-
-Route::get('/file/create', 'FileController@create' )->name('create');
+Route::get('/file', 'UserNameController@index' );
+Route::get('/create', 'FileController@index' );
 
 Route::post('/file', 'FileController@store' )->name('filestore');
-Route::post('/user', 'UserNameController@store' )->name('userstore');
+Route::post('/create', 'UserNameController@store' )->name('userstore');
 
 Route::get('/file/{file}', 'FileController@show' )->name('show');
 Route::get('/file/{file}/edit', 'FileController@edit' )->name('edit');
 Route::patch('/file/{file}', 'FileController@update' )->name('update');
 Route::delete('/file/{file}', 'FileController@destroy' )->name('destroy');
-

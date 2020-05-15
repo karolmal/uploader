@@ -15,14 +15,9 @@ class UserNameController extends Controller
     public function index() 
     {
         $users = User::all();
-        $userfile = User::find(9)->file; // select from file where user_id = 9
         $files = File::all();
 
-        
-
-        
-
-        return view('users.index', ['userfile' => $userfile, 'users' => $users, 'files' => $files],);
+        return view('users.index', ['users' => $users, 'files' => $files]);
 
 
 
@@ -39,19 +34,20 @@ class UserNameController extends Controller
      'username' => 'required|string',
      'file_id' => 'required|integer',
 ]);
-    $user = new User();
+    $users = new User();
          $data = $request->all(); 
 
          if(isset($data['file_id'])) {
              $file = File::find($data['file_id']);
-             $user->file()->associate($file);
+             $users->file()->associate($file);
          }
-         $user->fill($data); 
-         $user->save();
+         $users->fill($data); 
+         $users->save();
 
-         $user = User::all();
+         $users = User::all();
+         $files = File::all();
 
-         return view('show', ['user' => $user]);
+         return view('users.index', ['users' => $users, 'files' => $files]);
  }
 
 }
