@@ -14,18 +14,15 @@ class UserNameController extends Controller
     
     public function index() 
     {
-        $users = User::all();
-        $files = File::all();
+        $users = User::latest()->get();
 
-        return view('users.index', ['users' => $users, 'files' => $files]);
-
-
-
+        // I was thinking i also have to send data from files table to view but i dont think so coz i can just use relationship, user->file->something here
+ 
+        return view('users.index', ['users' => $users]);
     }
 
 
 
-    // Store username
     public function store(Request $request)
     {
 
@@ -44,10 +41,20 @@ class UserNameController extends Controller
          $users->fill($data); 
          $users->save();
 
-         $users = User::all();
-         $files = File::all();
+         $users = User::latest()->get();
 
-         return view('users.index', ['users' => $users, 'files' => $files]);
+         return view('users.index', ['users' => $users]);
  }
+
+   
+    public function show($id)
+    
+    {
+
+        $user = User::find($id);
+        
+        return view('users.show', ['user' => $user]);
+
+    }
 
 }

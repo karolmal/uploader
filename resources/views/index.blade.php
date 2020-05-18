@@ -4,6 +4,7 @@
 @section('content')
     <!-- go to index page -->
     <div class="container">
+        <a href="/create">Create an upload</a>
         <a href="/file">See all uploads</a>
     </div>
 

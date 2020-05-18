@@ -1,13 +1,6 @@
 @extends('layout')
 
 
-    <!-- go to create page -->
-    <div class="container">
-      <a href="/create">Create new upload</a>
-      <a href="/file">Show Articles</a>
-  </div>
-
-@foreach($users as $user) 
 
 <div class="container">
     <h2>username:{{$user->username}}</h2>
@@ -18,21 +11,5 @@
     <p>file id:{{$user->file->id}}</p>
 
     
-    <button type="button" class="btn btn-info">View</button>
     <button type="button" class="btn btn-danger">Delete</button>
 </div>
-
-
-@endforeach
-
-
-
-
-
-
-
-
-
-
-
-

@@ -17,7 +17,7 @@ Route::get('/create', 'FileController@index' );
 Route::post('/file', 'FileController@store' )->name('filestore');
 Route::post('/create', 'UserNameController@store' )->name('userstore');
 
-Route::get('/file/{file}', 'FileController@show' )->name('show');
-Route::get('/file/{file}/edit', 'FileController@edit' )->name('edit');
-Route::patch('/file/{file}', 'FileController@update' )->name('update');
-Route::delete('/file/{file}', 'FileController@destroy' )->name('destroy');
+Route::get('/file/{file}', 'UserNameController@show' )->name('show');
+Route::get('/file/{file}/edit', 'UserNameControlle@edit' )->name('edit');
+Route::patch('/file/{file}', 'UserNameControlle@update' )->name('update');
+Route::delete('/file/{file}', 'UserNameControlle@destroy' )->name('destroy');
