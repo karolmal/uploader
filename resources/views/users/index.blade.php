@@ -19,7 +19,7 @@
 
     
     {{-- this show route has to be fixed --}}
-    {{-- <button type="button" class="btn btn-info"><a href="{{route('show')}}">View</a></button> --}}
+  <button type="button" class="btn btn-info"><a href="/files/{{$user->file_id}}">{{$user->username}}</a></button>
     <form action="{{route('destroy',['file' => $user->file_id])}}" method="POST">
       @method('DELETE')
       @csrf

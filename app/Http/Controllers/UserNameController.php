@@ -54,9 +54,9 @@ class UserNameController extends Controller
     
     {
 
-        $user = User::where('file_id', '=', $id);
+        $user = User::where('file_id', '=', $id)->first();
         
-        return view('users.show', ['user' => $user]);
+        return view('users.show',compact('user'));
 
     }
 
