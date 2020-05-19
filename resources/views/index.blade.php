@@ -4,8 +4,8 @@
 @section('content')
     <!-- go to index page -->
     <div class="container">
-        <a href="/create">Create an upload</a>
-        <a href="/file">See all uploads</a>
+        <a href="/files/create">Create an upload</a>
+        <a href="/files">See all uploads</a>
     </div>
 
 @endsection
@@ -28,11 +28,11 @@
             @endforeach
         </ul>
     @endif
-
     <hr/>
     {{-- <div class="dz-default dz-message"><button class="dz-button" type="button">Drop files here to upload</button></div> --}}
 
-            <div class="dropzone my-dropzone"  id="dropzoneForm"></div>
+    <div class="dropzone my-dropzone"  id="dropzoneForm"></div>
+
 
 
     <button type="submit" id="submitForm">

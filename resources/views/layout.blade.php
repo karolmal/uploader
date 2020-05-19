@@ -8,9 +8,9 @@
   crossorigin="anonymous"></script>
   <script src="/dropzone/dist/dropzone.js"></script>
 
-  <script src="js/app.js"></script>
+  <script src="/js/app.js<?php echo '?token=' . date('Ymdis') ?>"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/dropzone/dist/dropzone.css">
     <link rel="stylesheet" href="/dropzone/dist/basic.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">

@@ -1,10 +1,8 @@
-
-
-    Dropzone.autoDiscover = false;
+Dropzone.autoDiscover = false;
 console.log('here we are');
 $(document).ready(function () {
 $(".my-dropzone").dropzone({
-        url: '/file',
+        url: '/files/create',
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         autoProcessQueue: true,
         init: function(){
@@ -27,6 +25,10 @@ $(".my-dropzone").dropzone({
                 document.getElementById('submitForm').textContent = 'Submit';
                 $('#file_id').val(response);
             }
+        });
+        this.on("error", function (file, response, xhr) {
+            console.log('Dropzone Initialized... error',file, response, xhr);
+            
         });
         this.on("addedfile", function (file) {
             console.log('Dropzone Initialized... added');

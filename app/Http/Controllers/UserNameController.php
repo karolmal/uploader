@@ -42,8 +42,11 @@ class UserNameController extends Controller
          $users->save();
 
          $users = User::latest()->get();
+         
 
-         return view('users.index', ['users' => $users]);
+         //return redirect()->route('file');
+         //OR (WHICHEVER YOU PREFER!!)
+         return redirect('/files');
  }
 
    
@@ -51,9 +54,22 @@ class UserNameController extends Controller
     
     {
 
-        $user = User::find($id);
+        $user = User::where('file_id', '=', $id);
         
         return view('users.show', ['user' => $user]);
+
+    }
+
+    public function destroy($id)
+    
+    {
+        // got files id and removed file form database, now user with file_id
+        $file = File::findOrFail($id)->delete();
+        $user = User::where('file_id', '=', $id)->delete();
+
+        
+        return redirect('/files');
+        
 
     }
 

@@ -3,7 +3,7 @@
 
     <!-- go to create page -->
     <div class="container">
-      <a href="/create">Create new upload</a>
+      <a href="/files/create">Create new upload</a>
       <a href="/file">Show Articles</a>
   </div>
 
@@ -18,8 +18,13 @@
     <p>file id:{{$user->file->id}}</p>
 
     
-    <button type="button" class="btn btn-info">View</button>
-    <button type="button" class="btn btn-danger">Delete</button>
+    {{-- this show route has to be fixed --}}
+    {{-- <button type="button" class="btn btn-info"><a href="{{route('show')}}">View</a></button> --}}
+    <form action="{{route('destroy',['file' => $user->file_id])}}" method="POST">
+      @method('DELETE')
+      @csrf
+      <button type="submit">Delete</button>               
+     </form>
 </div>
 
 
