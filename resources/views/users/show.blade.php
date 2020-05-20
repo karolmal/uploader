@@ -11,7 +11,7 @@
       <source src="{{$user->file->url}}" type="video/mp4">
     </video>
 
-    
+    <h1>hey</h1>
     <form action="{{ url('/file/{file}', ['file' => $user->id]) }}" method="post">
         <input class="btn btn-default" type="submit" value="Delete" />
         <input type="hidden" name="_method" value="delete" />
